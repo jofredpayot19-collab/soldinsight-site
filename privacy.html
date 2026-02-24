@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoldinSight - Privacy Policy</title>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.8;
+      color: var(--t-sec);
+      background: var(--bg);
+      padding: 24px;
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 40px;
+      border-radius: 12px 12px 0 0;
+      margin: -40px -40px 32px -40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(99,102,241,0.06) 100%);
+      pointer-events: none;
+    }
+    .header h1 { font-size: 32px; font-weight: 700; color: var(--t-pri); margin-bottom: 8px; }
+    .header p  { color: var(--t-sec); font-size: 16px; opacity: 0.85; }
+
+    /* ── Headings ── */
+    h2 {
+      color: var(--green-text);
+      font-size: 22px;
+      margin-top: 32px; margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+    h3 {
+      color: var(--t-pri);
+      font-size: 17px;
+      margin-top: 18px; margin-bottom: 8px;
+      font-weight: 600;
+    }
+    h4 { color: var(--t-sec); font-size: 14px; margin-top: 14px; margin-bottom: 6px; font-weight: 600; }
+
+    /* ── Body text ── */
+    p  { margin-bottom: 14px; color: var(--t-sec); font-size: 15px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; color: var(--t-sec); font-size: 15px; line-height: 1.7; }
+    strong { color: var(--t-pri); font-weight: 600; }
+    code {
+      background: var(--bg-input); padding: 2px 7px;
+      border-radius: 4px; font-family: 'Courier New', monospace;
+      font-size: 13px; color: var(--green-text);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Links ── */
+    a { color: var(--green-text); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); text-decoration: underline; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 28px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: rgba(34,197,94,0.07);
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      margin: 18px 0;
+    }
+    .highlight p { margin: 0; color: var(--t-sec); }
+
+    /* ── Feature grid ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .feature-card {
+      background: var(--bg-alt);
+      padding: 18px; border-radius: 10px; text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .feature-card .icon { font-size: 32px; margin-bottom: 8px; }
+    .feature-card h3 { margin: 0; font-size: 15px; color: var(--green-text); }
+    .feature-card p  { margin: 6px 0 0 0; font-size: 13px; color: var(--t-muted); }
+
+    /* ── Stats grid ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .stat-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 18px; border-radius: 10px; text-align: center;
+      transition: all 0.25s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--green-dim);
+      box-shadow: 0 4px 14px rgba(34,197,94,0.15);
+      transform: scale(1.03);
+    }
+    .stat-card .number { font-size: 32px; font-weight: 700; display: block; margin-bottom: 4px; color: var(--green-text); }
+    .stat-card .label  { font-size: 12px; color: var(--t-muted); text-transform: uppercase; letter-spacing: 0.4px; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; border-left: 2px solid var(--green-dim); margin: 18px 0; }
+    .timeline-item { margin-bottom: 20px; position: relative; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -35px; top: 5px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green); border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--green-dim);
+    }
+    .timeline-item h3 { margin-top: 0; color: var(--green-text); font-size: 16px; }
+
+    /* ── FAQ ── */
+    .faq-item {
+      background: var(--bg-alt); padding: 20px; border-radius: 8px;
+      margin-bottom: 14px; border-left: 3px solid var(--green);
+    }
+    .faq-item h3 { color: var(--green-text); margin-top: 0; font-size: 16px; margin-bottom: 8px; }
+    .faq-item strong { color: var(--green-text); }
+    .faq-item p { font-size: 14px; margin-bottom: 0; }
+
+    /* ── Search box ── */
+    .search-box { margin-bottom: 28px; }
+    .search-box input {
+      width: 100%; padding: 14px 18px; font-size: 15px;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--bg-input); color: var(--t-pri);
+      transition: all 0.2s ease;
+    }
+    .search-box input:focus {
+      outline: none; border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .search-box input::placeholder { color: var(--t-muted); }
+
+    /* ── Category grid ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-bottom: 36px;
+    }
+    .category-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      cursor: pointer; transition: all 0.25s ease; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .category-card:hover {
+      transform: translateY(-3px); border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .category-card h3 { font-size: 16px; margin: 0 0 6px 0; color: var(--t-pri); }
+    .category-card p  { font-size: 13px; color: var(--t-muted); margin: 0; }
+
+    /* ── Contact form / cards ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .contact-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .contact-card:hover { border-color: var(--green-dim); box-shadow: 0 4px 14px rgba(34,197,94,0.12); }
+    .contact-card .icon { font-size: 32px; margin-bottom: 10px; }
+    .contact-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 6px 0; }
+    .contact-card p  { color: var(--t-muted); font-size: 13px; margin: 0; }
+
+    /* ── Index hub cards ── */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .hub-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      text-decoration: none; display: block;
+      transition: all 0.25s ease;
+    }
+    .hub-card:hover {
+      transform: translateY(-3px); border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15); text-decoration: none;
+    }
+    .hub-card .icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .hub-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 4px 0; }
+    .hub-card p  { color: var(--t-muted); font-size: 12px; margin: 0; }
+
+    /* ── Info / warning / success boxes ── */
+    .info-box {
+      background: rgba(99,102,241,0.08);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .info-box p { margin: 0; color: var(--t-sec); font-size: 14px; }
+    .warning-box {
+      background: rgba(245,158,11,0.08);
+      border-left: 4px solid var(--orange);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .warning-box p { margin: 0; color: var(--orange); font-size: 14px; }
+    .danger-box {
+      background: rgba(239,68,68,0.08);
+      border-left: 4px solid var(--red);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .danger-box p { margin: 0; color: var(--red); font-size: 14px; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th { background: var(--bg-alt); color: var(--t-muted); font-size: 11px; text-transform: uppercase;
+         letter-spacing: 0.4px; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--t-sec); }
+    tr:hover td { background: var(--bg-alt); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.2s ease; text-decoration: none;
+    }
+    .btn-green {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dim) 100%);
+      color: #111318;
+      box-shadow: 0 2px 8px rgba(34,197,94,0.3);
+    }
+    .btn-green:hover { box-shadow: 0 4px 14px rgba(34,197,94,0.45); transform: translateY(-1px); color: #111318; text-decoration: none; }
+    .btn-outline {
+      background: transparent; color: var(--green-text);
+      border: 1px solid var(--green-dim);
+    }
+    .btn-outline:hover { background: rgba(34,197,94,0.08); color: var(--green-text); text-decoration: none; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center; color: var(--t-muted); font-size: 13px;
+    }
+    .footer-nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+
+    .quick-links, .footer-links {
+      display: flex; justify-content: center; gap: 14px;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .quick-links a, .footer-links a {
+      color: var(--t-muted); padding: 6px 14px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 13px; transition: all 0.2s ease; text-decoration: none;
+    }
+    .quick-links a:hover, .footer-links a:hover {
+      color: var(--green-text); border-color: var(--green-dim);
+      background: rgba(34,197,94,0.06); text-decoration: none;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar       { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--t-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .container { padding: 20px; }
+      .header { margin: -20px -20px 22px -20px; padding: 22px 20px; }
+      .header h1 { font-size: 24px; }
+      h2 { font-size: 19px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔒 Privacy Policy</h1>
+      <p>SoldinSight Chrome Extension</p>
+    </div>
+
+    <p class="effective-date"><strong>Effective Date:</strong> February 13, 2026</p>
+
+    <div class="highlight">
+      <p><strong>🎯 Our Commitment:</strong> SoldinSight respects your privacy. We do not collect, store, transmit, or sell any of your personal data. Everything happens locally in your browser.</p>
+    </div>
+
+    <div class="section">
+      <h2>1. Information We DO NOT Collect</h2>
+      <p>SoldinSight does not collect any of the following:</p>
+      <ul>
+        <li><strong>Personal Information:</strong> We don't collect your name, email, address, phone number, or any other personal identifiers</li>
+        <li><strong>Browsing History:</strong> We don't track which eBay listings you view or your browsing patterns</li>
+        <li><strong>Purchase History:</strong> We don't collect information about your eBay purchases or sales</li>
+        <li><strong>Financial Information:</strong> We don't collect credit card, payment, or banking information</li>
+        <li><strong>Location Data:</strong> We don't collect your geographic location or IP address</li>
+        <li><strong>Analytics Data:</strong> We don't use any analytics, tracking pixels, or telemetry</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>2. Information Stored Locally</h2>
+      <p>SoldinSight stores the following data <strong>locally in your browser only</strong> using Chrome's Storage API. This data never leaves your device and is not transmitted to any servers.</p>
+      
+      <h3>2.1 Cached eBay Data</h3>
+      <ul>
+        <li><strong>What:</strong> Public eBay sold listing information (item titles, sale prices, sale dates, seller usernames)</li>
+        <li><strong>Why:</strong> To improve performance and reduce redundant eBay requests (80%+ cache hit rate)</li>
+        <li><strong>Duration:</strong> Cached for 24 hours, then automatically deleted</li>
+        <li><strong>Storage Limit:</strong> Maximum 200 items cached at once (oldest items deleted when limit reached)</li>
+        <li><strong>Storage:</strong> Chrome Storage API (chrome.storage.local) - never transmitted anywhere</li>
+      </ul>
+
+      <h3>2.2 User Preferences & State</h3>
+      <ul>
+        <li><strong>Disclaimer Acceptance:</strong> Timestamp when you accepted the eBay Terms of Service disclaimer</li>
+        <li><strong>Extension Version:</strong> The installed version number, used to detect updates and show a one-time welcome message</li>
+        <li><strong>Currency Exchange Rates:</strong> Cached exchange rates from the Frankfurter API (European Central Bank data), stored for up to 12 hours to avoid repeated requests</li>
+        <li><strong>Why:</strong> To remember your preferences and avoid unnecessary network requests</li>
+        <li><strong>Storage:</strong> Chrome Storage API — never transmitted anywhere</li>
+      </ul>
+
+      <h3>2.3 Fee Configuration Data</h3>
+      <ul>
+        <li><strong>What:</strong> eBay fee calculation rules and rates (public information bundled with the extension)</li>
+        <li><strong>Why:</strong> To provide accurate profit calculations based on current eBay fees</li>
+        <li><strong>Storage Duration:</strong> Bundled with each extension version, updated with extension updates</li>
+        <li><strong>Data Includes:</strong> Fee percentages, tier thresholds, category-specific rates</li>
+        <li><strong>Storage:</strong> Chrome Storage API - this is public eBay fee information, not personal data</li>
+      </ul>
+
+      <h3>2.4 Usage Tracking (Calculator Rate Limit)</h3>
+      <ul>
+        <li><strong>What:</strong> A list of recently viewed eBay item numbers and the timestamps of when you viewed them (e.g., item ID "123456789" viewed at 2:30 PM). No personal information is stored — eBay item numbers are public identifiers.</li>
+        <li><strong>Why:</strong> To enforce a soft rolling rate limit of 50 profit calculations per 2-hour window. This is a courtesy limit stored entirely on your device.</li>
+        <li><strong>Duration:</strong> Each entry is automatically deleted 2 hours after it was recorded (rolling window). No entry persists beyond 2 hours.</li>
+        <li><strong>Storage:</strong> Chrome Storage API (<code>chrome.storage.local</code>) — never transmitted anywhere, never leaves your device.</li>
+        <li><strong>Reset:</strong> Entries expire automatically. You can also clear all extension data via Chrome Settings → Privacy → Clear browsing data.</li>
+        <li><strong>Note:</strong> Sold history and related listings remain fully accessible even when the calculator rate limit is reached.</li>
+      </ul>
+
+      <h3>2.5 What We DON'T Store</h3>
+      <ul>
+        <li>❌ Your eBay login credentials (we never see them)</li>
+        <li>❌ Your purchase or sales history (only temporarily cached sold listings you view)</li>
+        <li>❌ Your payment information</li>
+        <li>❌ Your browsing history outside of eBay</li>
+        <li>❌ Any personally identifiable information</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Data Sources and Transmission</h2>
+      
+      <h3>3.1 eBay Data Scraping</h3>
+      <ul>
+        <li><strong>What We Access:</strong> SoldinSight accesses publicly available eBay sold item history pages</li>
+        <li><strong>How:</strong> The extension makes HTTPS requests to eBay's public purchase history URLs (e.g., eBay.com/sch/sold)</li>
+        <li><strong>Data Scraped:</strong> Item titles, sale prices, sale dates, quantities sold, seller usernames - all publicly visible information</li>
+        <li><strong>Your Session:</strong> If you're logged into eBay, requests use your existing session cookies (managed by your browser, not by us)</li>
+        <li><strong>Rate Limiting:</strong> A 1–3 second random delay between requests prevents overwhelming eBay's servers</li>
+        <li><strong>No Account Access:</strong> We never access your eBay account settings, messages, purchase history, or payment information</li>
+        <li><strong>Disclaimer:</strong> SoldinSight is not affiliated with eBay Inc. We access publicly available data only</li>
+      </ul>
+      
+      <h3>3.2 To eBay</h3>
+      <ul>
+        <li>SoldinSight makes requests to eBay.com to retrieve <strong>publicly available</strong> sold listing data</li>
+        <li>These requests appear as normal browser requests to eBay</li>
+        <li>We don't modify or intercept your eBay credentials</li>
+        <li>A random 1–3 second delay between requests prevents excessive server load</li>
+      </ul>
+
+      <h3>3.3 No Other External Connections</h3>
+      <ul>
+        <li><strong>Current Behavior:</strong> Extension uses only local fee configuration bundled with the extension</li>
+        <li><strong>No Remote Data:</strong> All fee data and configuration is included in the extension package</li>
+        <li><strong>Fee Updates:</strong> Fee configuration is updated with each extension version release</li>
+        <li><strong>Privacy:</strong> No external API calls except to eBay.com domains for sold item data, and api.frankfurter.app for live currency exchange rates (no personal data transmitted)</li>
+      </ul>
+
+      <h3>3.4 To Third Parties</h3>
+      <p><strong>We do not transmit any data to third parties. Period.</strong></p>
+      <ul>
+        <li>No analytics services (Google Analytics, Mixpanel, etc.)</li>
+        <li>No advertising networks</li>
+        <li>No data brokers</li>
+        <li>No external servers or APIs (only eBay.com for sold item data and api.frankfurter.app for currency rates)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>4. Chrome Permissions Explained</h2>
+      <p>SoldinSight requests minimal permissions:</p>
+
+      <h3>4.1 Storage Permission</h3>
+      <ul>
+        <li><strong>Purpose:</strong> Store cached data and preferences locally in your browser</li>
+        <li><strong>Scope:</strong> Local storage only (no cloud sync, no external servers)</li>
+      </ul>
+
+      <h3>4.2 Active Tab Permission</h3>
+      <ul>
+        <li><strong>Purpose:</strong> Access the current eBay listing page to inject our UI and fetch sold history</li>
+        <li><strong>Scope:</strong> Only works on eBay.com and international eBay domains</li>
+        <li><strong>Limitation:</strong> Cannot access other websites or tabs</li>
+      </ul>
+
+      <h3>4.3 Host Permissions (eBay Domains)</h3>
+      <ul>
+        <li><strong>Purpose:</strong> Make requests to eBay to retrieve sold listing data</li>
+        <li><strong>Scope:</strong> Only eBay.com, ebay.co.uk, ebay.com.au, etc.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>5. Data Security</h2>
+      <ul>
+        <li><strong>Encryption:</strong> All cached data is stored using Chrome's encrypted Storage API</li>
+        <li><strong>XSS Protection:</strong> Enterprise-grade HTML sanitization prevents malicious code injection</li>
+        <li><strong>HTTPS Only:</strong> All network requests use secure HTTPS connections</li>
+        <li><strong>CSP (Content Security Policy):</strong> Strict security headers prevent unauthorized script execution</li>
+        <li><strong>No Remote Code:</strong> Extension code is bundled and signed - no remote code execution</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Data Retention</h2>
+      <ul>
+        <li><strong>Cached eBay Data:</strong> Automatically deleted after 24 hours</li>
+        <li><strong>Fee Configuration:</strong> Updated every 7 days (cached for up to 30 days)</li>
+        <li><strong>User Preferences:</strong> Kept until you uninstall the extension or clear browser data</li>
+        <li><strong>Manual Deletion:</strong> Clear all data via Chrome settings → Privacy → Clear browsing data → Cached images and files</li>
+      </ul>
+      
+      <h3>6.1 How Long We Keep Your Data</h3>
+      <p><strong>Short Answer:</strong> Maximum 24 hours for most data, 30 days for fee configurations.</p>
+      <ul>
+        <li><strong>Sold History Cache:</strong> 24 hours maximum, then automatically purged</li>
+        <li><strong>Request Timestamps:</strong> 1 minute only (for rate limiting)</li>
+        <li><strong>Fee Data:</strong> 30 days maximum (public eBay fee information)</li>
+        <li><strong>Disclaimer Acceptance:</strong> Permanent until extension uninstall (one timestamp only)</li>
+      </ul>
+      
+      <h3>6.2 Automatic Data Cleanup</h3>
+      <ul>
+        <li>Old cache entries are automatically deleted when expired (24 hours)</li>
+        <li>When cache reaches 200 items, oldest items are automatically removed</li>
+        <li>No manual cleanup needed - everything is automatic</li>
+        <li>Uninstalling the extension deletes ALL data immediately</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Children's Privacy</h2>
+      <p>SoldinSight is not directed at children under 13. We do not knowingly collect any information from children. If you are under 13, do not use this extension.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. International Users</h2>
+      <p>SoldinSight works on international eBay sites (UK, Australia, Canada, Germany, France, Italy, Spain, Japan). All privacy protections apply equally regardless of your location.</p>
+      <p>Your data never leaves your device - there is no server-side processing or cloud storage.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. Third-Party Services</h2>
+      <p>SoldinSight integrates with two external services:</p>
+      <ul>
+        <li><strong>eBay.com:</strong> To retrieve public sold listing data (required for core functionality)</li>
+        <li><strong>Frankfurter API (api.frankfurter.app):</strong> To retrieve live currency exchange rates for the built-in currency converter. This is a free, open European Central Bank data service. Only a simple rate request is sent — no personal data is transmitted. Rates are cached locally for 12 hours to minimise requests.</li>
+      </ul>
+      <p>eBay does not receive any personal information from SoldinSight beyond what you would normally share when browsing eBay listings.</p>
+      
+      <h3>9.1 eBay Integration Details</h3>
+      <ul>
+        <li><strong>What We Request:</strong> Public sold listing data (titles, prices, dates, seller usernames)</li>
+        <li><strong>How:</strong> Direct HTTPS requests to eBay.com using your existing session</li>
+        <li><strong>What eBay Knows:</strong> Only that you're viewing sold history (same as viewing it manually)</li>
+        <li><strong>Rate Limiting:</strong> A 1–3 second random delay between requests to respect eBay's servers</li>
+        <li><strong>No Data Sent:</strong> We never send your personal information to eBay</li>
+      </ul>
+      
+      <h3>9.2 No Other Third Parties</h3>
+      <p>We explicitly <strong>DO NOT</strong> use:</p>
+      <ul>
+        <li>❌ Google Analytics or any analytics platform</li>
+        <li>❌ Advertising networks or trackers</li>
+        <li>❌ Cloud storage services</li>
+        <li>❌ External APIs (except eBay)</li>
+        <li>❌ Social media integrations</li>
+        <li>❌ Email marketing services</li>
+        <li>❌ Payment processors (extension is 100% free)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>10. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected in the "Effective Date" at the top of this page.</p>
+      <p>Material changes will be communicated through:</p>
+      <ul>
+        <li>Chrome Web Store extension update notes</li>
+        <li>In-app notification (if applicable)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>11. Your Rights</h2>
+      <ul>
+        <li><strong>Access:</strong> All your data is stored locally - you can inspect it via Chrome DevTools</li>
+        <li><strong>Deletion:</strong> Uninstall the extension or clear browser data to delete all stored information</li>
+        <li><strong>Portability:</strong> Data is stored in standard Chrome Storage format</li>
+        <li><strong>Opt-Out:</strong> Simply uninstall the extension to stop all data processing</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>12. Open Source</h2>
+      <p>SoldinSight's code is available for inspection. You can:</p>
+      <ul>
+        <li>Review the source code to verify our privacy claims</li>
+        <li>Inspect network requests using Chrome DevTools</li>
+        <li>Examine local storage using Chrome's Storage Inspector</li>
+      </ul>
+      <p>Transparency is our commitment to your privacy.</p>
+    </div>
+
+    <div class="section">
+      <h2>13. Contact Information</h2>
+      <p>If you have questions about this Privacy Policy or SoldinSight's privacy practices:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a></li>
+        <li><strong>Response Time:</strong> We typically respond within 24-48 hours</li>
+        <li><strong>Support:</strong> You can also use the Chrome Web Store support system to report issues</li>
+      </ul>
+      <p><strong>Note:</strong> For Chrome Web Store support, you can also use the extension's review system.</p>
+    </div>
+
+    <div class="highlight">
+      <p><strong>📌 Summary:</strong></p>
+      <ul style="margin-bottom: 0;">
+        <li>✅ No data collection</li>
+        <li>✅ No tracking</li>
+        <li>✅ No analytics</li>
+        <li>✅ No external servers (only eBay.com for sold data + Frankfurter API for currency rates)</li>
+        <li>✅ Everything stored locally</li>
+        <li>✅ Auto-deleted after use</li>
+        <li>✅ Open source & transparent</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p><strong>SoldinSight</strong></p>
+      <p>Built with privacy in mind. No compromises.</p>
+      
+      <div class="quick-links">
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="help.html">Help Center</a>
+        <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+      </div>
+      
+      <p style="margin-top: 10px;">
+        <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

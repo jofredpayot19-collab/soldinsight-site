@@ -1,0 +1,47 @@
+/* ============================================================
+   SoldinSight – Shared CSS Variables
+   Linked by all internal HTML pages (about, help, privacy, etc.)
+   Also re-declares styles.css aliases for cross-compatibility
+   ============================================================ */
+
+:root {
+  /* Core backgrounds */
+  --bg:            #111318;   /* used by HTML pages */
+  --bg-base:       #111318;   /* used by styles.css */
+  --bg-card:       #1c1f27;
+  --bg-card-alt:   #23262f;
+  --bg-alt:        #23262f;   /* alias for HTML pages */
+  --bg-header:     #1c1f27;
+  --bg-input:      #2a2d38;
+
+  /* Borders */
+  --border:        #2e3140;
+  --border-hi:     #383b4a;   /* used by HTML pages */
+  --border-light:  #383b4a;   /* used by styles.css */
+
+  /* Brand colours */
+  --green:         #22c55e;
+  --green-dim:     #16a34a;
+  --green-glow:    rgba(34,197,94,0.22);
+  --green-text:    #4ade80;
+  --orange:        #f59e0b;
+  --orange-dim:    #d97706;
+  --red:           #ef4444;
+  --red-dim:       #dc2626;
+  --accent:        #6366f1;
+
+  /* Text — HTML page names */
+  --t-pri:         #f0f2f8;
+  --t-sec:         #9ca3b0;
+  --t-muted:       #6b7280;
+
+  /* Text — styles.css names (aliases) */
+  --text-primary:   #f0f2f8;
+  --text-secondary: #9ca3b0;
+  --text-muted:     #6b7280;
+  --text-label:     #6b7280;
+
+  /* Misc */
+  --white-10:      rgba(255,255,255,0.10);
+  --white-20:      rgba(255,255,255,0.20);
+}
