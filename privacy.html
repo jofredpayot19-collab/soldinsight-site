@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Copyright (c) 2026 Jofred Curada Payot. All Rights Reserved. SoldinSight — eBay Sold History & Profit Calculator -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -314,272 +315,246 @@
       <p>SoldinSight Chrome Extension</p>
     </div>
 
-    <p class="effective-date"><strong>Effective Date:</strong> February 13, 2026</p>
+    <p class="effective-date"><strong>Effective Date:</strong> March 4, 2026</p>
 
     <div class="highlight">
-      <p><strong>🎯 Our Commitment:</strong> SoldinSight respects your privacy. We do not collect, store, transmit, or sell any of your personal data. Everything happens locally in your browser.</p>
+      <p><strong>🎯 Our Commitment:</strong> SoldinSight respects your privacy. We do not collect, store, transmit, or sell any of your personal data. Everything happens locally in your browser — no servers, no tracking, no accounts required.</p>
     </div>
 
     <div class="section">
-      <h2>1. Information We DO NOT Collect</h2>
-      <p>SoldinSight does not collect any of the following:</p>
+      <h2>1. Information We Do Not Collect</h2>
+      <p>SoldinSight does not collect, transmit, or store any of the following:</p>
       <ul>
-        <li><strong>Personal Information:</strong> We don't collect your name, email, address, phone number, or any other personal identifiers</li>
-        <li><strong>Browsing History:</strong> We don't track which eBay listings you view or your browsing patterns</li>
-        <li><strong>Purchase History:</strong> We don't collect information about your eBay purchases or sales</li>
-        <li><strong>Financial Information:</strong> We don't collect credit card, payment, or banking information</li>
-        <li><strong>Location Data:</strong> We don't collect your geographic location or IP address</li>
-        <li><strong>Analytics Data:</strong> We don't use any analytics, tracking pixels, or telemetry</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>2. Information Stored Locally</h2>
-      <p>SoldinSight stores the following data <strong>locally in your browser only</strong> using Chrome's Storage API. This data never leaves your device and is not transmitted to any servers.</p>
-      
-      <h3>2.1 Cached eBay Data</h3>
-      <ul>
-        <li><strong>What:</strong> Public eBay sold listing information (item titles, sale prices, sale dates, seller usernames)</li>
-        <li><strong>Why:</strong> To improve performance and reduce redundant eBay requests (80%+ cache hit rate)</li>
-        <li><strong>Duration:</strong> Cached for 24 hours, then automatically deleted</li>
-        <li><strong>Storage Limit:</strong> Maximum 200 items cached at once (oldest items deleted when limit reached)</li>
-        <li><strong>Storage:</strong> Chrome Storage API (chrome.storage.local) - never transmitted anywhere</li>
-      </ul>
-
-      <h3>2.2 User Preferences & State</h3>
-      <ul>
-        <li><strong>Disclaimer Acceptance:</strong> Timestamp when you accepted the eBay Terms of Service disclaimer</li>
-        <li><strong>Extension Version:</strong> The installed version number, used to detect updates and show a one-time welcome message</li>
-        <li><strong>Currency Exchange Rates:</strong> Cached exchange rates from the Frankfurter API (European Central Bank data), stored for up to 12 hours to avoid repeated requests</li>
-        <li><strong>Why:</strong> To remember your preferences and avoid unnecessary network requests</li>
-        <li><strong>Storage:</strong> Chrome Storage API — never transmitted anywhere</li>
-      </ul>
-
-      <h3>2.3 Fee Configuration Data</h3>
-      <ul>
-        <li><strong>What:</strong> eBay fee calculation rules and rates (public information bundled with the extension)</li>
-        <li><strong>Why:</strong> To provide accurate profit calculations based on current eBay fees</li>
-        <li><strong>Storage Duration:</strong> Bundled with each extension version, updated with extension updates</li>
-        <li><strong>Data Includes:</strong> Fee percentages, tier thresholds, category-specific rates</li>
-        <li><strong>Storage:</strong> Chrome Storage API - this is public eBay fee information, not personal data</li>
-      </ul>
-
-      <h3>2.4 Usage Tracking (Calculator Rate Limit)</h3>
-      <ul>
-        <li><strong>What:</strong> A list of recently viewed eBay item numbers and the timestamps of when you viewed them (e.g., item ID "123456789" viewed at 2:30 PM). No personal information is stored — eBay item numbers are public identifiers.</li>
-        <li><strong>Why:</strong> To enforce a soft rolling rate limit of 50 profit calculations per 2-hour window. This is a courtesy limit stored entirely on your device.</li>
-        <li><strong>Duration:</strong> Each entry is automatically deleted 2 hours after it was recorded (rolling window). No entry persists beyond 2 hours.</li>
-        <li><strong>Storage:</strong> Chrome Storage API (<code>chrome.storage.local</code>) — never transmitted anywhere, never leaves your device.</li>
-        <li><strong>Reset:</strong> Entries expire automatically. You can also clear all extension data via Chrome Settings → Privacy → Clear browsing data.</li>
-        <li><strong>Note:</strong> Sold history and related listings remain fully accessible even when the calculator rate limit is reached.</li>
-      </ul>
-
-      <h3>2.5 What We DON'T Store</h3>
-      <ul>
-        <li>❌ Your eBay login credentials (we never see them)</li>
-        <li>❌ Your purchase or sales history (only temporarily cached sold listings you view)</li>
-        <li>❌ Your payment information</li>
-        <li>❌ Your browsing history outside of eBay</li>
-        <li>❌ Any personally identifiable information</li>
+        <li><strong>Personal Information:</strong> No name, email address, phone number, or any other personal identifiers</li>
+        <li><strong>Browsing History:</strong> No tracking of which eBay listings you view or your browsing patterns</li>
+        <li><strong>eBay Account Data:</strong> No access to your eBay account settings, messages, purchase history, or payment information</li>
+        <li><strong>Financial Information:</strong> No credit card, banking, or payment data of any kind</li>
+        <li><strong>Location Data:</strong> No geographic location or IP address collection</li>
+        <li><strong>Analytics or Telemetry:</strong> No analytics platforms, tracking pixels, crash reporters, or usage telemetry of any kind</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>3. Data Sources and Transmission</h2>
-      
-      <h3>3.1 eBay Data Scraping</h3>
+      <h2>2. Data Stored Locally On Your Device</h2>
+      <p>SoldinSight stores the following data <strong>locally in your browser only</strong> using Chrome's built-in storage. This data never leaves your device and is never transmitted to any server — including ours.</p>
+
+      <h3>2.1 Cached eBay Listing Data</h3>
       <ul>
-        <li><strong>What We Access:</strong> SoldinSight accesses publicly available eBay sold item history pages</li>
-        <li><strong>How:</strong> The extension makes HTTPS requests to eBay's public purchase history URLs (e.g., eBay.com/sch/sold)</li>
-        <li><strong>Data Scraped:</strong> Item titles, sale prices, sale dates, quantities sold, seller usernames - all publicly visible information</li>
-        <li><strong>Your Session:</strong> If you're logged into eBay, requests use your existing session cookies (managed by your browser, not by us)</li>
-        <li><strong>Rate Limiting:</strong> A 1–3 second random delay between requests prevents overwhelming eBay's servers</li>
-        <li><strong>No Account Access:</strong> We never access your eBay account settings, messages, purchase history, or payment information</li>
-        <li><strong>Disclaimer:</strong> SoldinSight is not affiliated with eBay Inc. We access publicly available data only</li>
+        <li><strong>What:</strong> Publicly visible eBay sold listing information — item titles, sale prices, sale dates, quantities, and seller usernames</li>
+        <li><strong>Why:</strong> To avoid re-fetching the same listing data on repeat visits, improving speed</li>
+        <li><strong>Duration:</strong> Automatically deleted after 24 hours</li>
+        <li><strong>Storage Limit:</strong> Maximum 200 cached listings at once. When full, the oldest entries are removed automatically</li>
+        <li><strong>Where:</strong> <code>chrome.storage.local</code> — on your device only, never transmitted</li>
       </ul>
-      
-      <h3>3.2 To eBay</h3>
+
+      <h3>2.2 User Preferences</h3>
       <ul>
-        <li>SoldinSight makes requests to eBay.com to retrieve <strong>publicly available</strong> sold listing data</li>
-        <li>These requests appear as normal browser requests to eBay</li>
-        <li>We don't modify or intercept your eBay credentials</li>
-        <li>A random 1–3 second delay between requests prevents excessive server load</li>
+        <li><strong>Disclaimer acceptance:</strong> A single timestamp recording when you acknowledged the independent tool disclaimer</li>
+        <li><strong>Installed version number:</strong> Used only to detect extension updates and show a one-time welcome message</li>
+        <li><strong>Currency exchange rates:</strong> Cached rates from the Frankfurter API (European Central Bank data), stored for up to 12 hours to avoid repeat requests. No personal data is included in these requests.</li>
+        <li><strong>Where:</strong> <code>chrome.storage.local</code> — on your device only, never transmitted</li>
+      </ul>
+
+      <h3>2.3 eBay Fee Configuration</h3>
+      <ul>
+        <li><strong>What:</strong> eBay fee rates and calculation rules — public information bundled directly inside the extension package</li>
+        <li><strong>Why:</strong> To calculate accurate profit estimates without needing an internet connection</li>
+        <li><strong>Updates:</strong> Fee data is updated with each new extension version release</li>
+        <li><strong>Note:</strong> This is not personal data. It is static reference data included in the extension itself</li>
+      </ul>
+
+      <h3>2.4 Profit Calculator Usage Counter</h3>
+      <ul>
+        <li><strong>What:</strong> A local list of eBay item numbers and the timestamps when you ran the profit calculator on them. eBay item numbers are public identifiers — no personal information is stored.</li>
+        <li><strong>Why:</strong> To enforce a courtesy limit on profit calculator usage (see extension description for current limit details). This is stored entirely on your device.</li>
+        <li><strong>Duration:</strong> Each entry expires automatically after 2 hours. Nothing persists beyond that window.</li>
+        <li><strong>Where:</strong> <code>chrome.storage.local</code> — on your device only, never transmitted</li>
+        <li><strong>Note:</strong> Sold history viewing is always unlimited. The counter only applies to the profit calculator feature.</li>
+      </ul>
+
+      <h3>2.5 What We Never Store</h3>
+      <ul>
+        <li>❌ eBay login credentials or session tokens</li>
+        <li>❌ Your personal eBay purchase or sales history</li>
+        <li>❌ Any payment or financial account information</li>
+        <li>❌ Browsing history outside of eBay listing pages</li>
+        <li>❌ Any personally identifiable information of any kind</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Network Requests Made by the Extension</h2>
+      <p>SoldinSight makes network requests to two external services only. No personal data is transmitted in either case.</p>
+
+      <h3>3.1 eBay.com — Sold Listing Data</h3>
+      <ul>
+        <li><strong>Purpose:</strong> To retrieve publicly available sold listing history for the eBay item you are currently viewing</li>
+        <li><strong>What is requested:</strong> Public sold listing data — item titles, prices, dates, quantities, and seller usernames. All of this information is publicly visible to any eBay visitor.</li>
+        <li><strong>What is NOT accessed:</strong> Your eBay account, private messages, personal purchase history, or payment information</li>
+        <li><strong>How it works:</strong> The extension makes standard HTTPS requests to eBay on your behalf, in the same way your browser would if you navigated there manually</li>
+        <li><strong>No data sent to eBay:</strong> We do not transmit your personal information to eBay. eBay receives only the same request data it would receive from any normal browser visit.</li>
+        <li><strong>Disclaimer:</strong> SoldinSight is an independent tool and is not affiliated with or endorsed by eBay Inc.</li>
+      </ul>
+
+      <h3>3.2 api.frankfurter.app — Currency Exchange Rates</h3>
+      <ul>
+        <li><strong>Purpose:</strong> To retrieve live exchange rates for the built-in currency converter</li>
+        <li><strong>What is requested:</strong> A simple public rate lookup (e.g. USD to AUD). No personal data is included in the request.</li>
+        <li><strong>Data source:</strong> European Central Bank reference rates, served via the free and open Frankfurter API</li>
+        <li><strong>Caching:</strong> Rates are cached locally for 12 hours to minimise requests</li>
+        <li><strong>Privacy:</strong> No user data, identifiers, or personal information is transmitted to this service</li>
       </ul>
 
       <h3>3.3 No Other External Connections</h3>
-      <ul>
-        <li><strong>Current Behavior:</strong> Extension uses only local fee configuration bundled with the extension</li>
-        <li><strong>No Remote Data:</strong> All fee data and configuration is included in the extension package</li>
-        <li><strong>Fee Updates:</strong> Fee configuration is updated with each extension version release</li>
-        <li><strong>Privacy:</strong> No external API calls except to eBay.com domains for sold item data, and api.frankfurter.app for live currency exchange rates (no personal data transmitted)</li>
-      </ul>
-
-      <h3>3.4 To Third Parties</h3>
-      <p><strong>We do not transmit any data to third parties. Period.</strong></p>
-      <ul>
-        <li>No analytics services (Google Analytics, Mixpanel, etc.)</li>
-        <li>No advertising networks</li>
-        <li>No data brokers</li>
-        <li>No external servers or APIs (only eBay.com for sold item data and api.frankfurter.app for currency rates)</li>
-      </ul>
+      <p>SoldinSight does <strong>not</strong> connect to any other external services. There are no analytics services, no advertising networks, no cloud storage, no developer-owned servers, and no third-party data processors of any kind.</p>
     </div>
 
     <div class="section">
-      <h2>4. Chrome Permissions Explained</h2>
-      <p>SoldinSight requests minimal permissions:</p>
+      <h2>4. Chrome Permissions — Why We Need Them</h2>
+      <p>SoldinSight requests the minimum permissions necessary to function.</p>
 
-      <h3>4.1 Storage Permission</h3>
+      <h3>4.1 <code>storage</code></h3>
       <ul>
-        <li><strong>Purpose:</strong> Store cached data and preferences locally in your browser</li>
-        <li><strong>Scope:</strong> Local storage only (no cloud sync, no external servers)</li>
+        <li><strong>Purpose:</strong> Save cached listing data and user preferences locally on your device</li>
+        <li><strong>Scope:</strong> Local device storage only. No cloud sync. No external servers.</li>
       </ul>
 
-      <h3>4.2 Active Tab Permission</h3>
+      <h3>4.2 <code>activeTab</code></h3>
       <ul>
-        <li><strong>Purpose:</strong> Access the current eBay listing page to inject our UI and fetch sold history</li>
-        <li><strong>Scope:</strong> Only works on eBay.com and international eBay domains</li>
-        <li><strong>Limitation:</strong> Cannot access other websites or tabs</li>
+        <li><strong>Purpose:</strong> Read the eBay listing page you are currently viewing to display the SoldinSight panel and extract item details</li>
+        <li><strong>Scope:</strong> Only the active tab, only on eBay listing pages</li>
+        <li><strong>Limitation:</strong> Cannot access other tabs, other websites, or background tabs</li>
       </ul>
 
-      <h3>4.3 Host Permissions (eBay Domains)</h3>
+      <h3>4.3 Host Permissions (eBay domains + Frankfurter)</h3>
       <ul>
-        <li><strong>Purpose:</strong> Make requests to eBay to retrieve sold listing data</li>
-        <li><strong>Scope:</strong> Only eBay.com, ebay.co.uk, ebay.com.au, etc.</li>
+        <li><strong>eBay domains</strong> (ebay.com, ebay.com.au, ebay.co.uk, etc.): Required to fetch publicly available sold listing data</li>
+        <li><strong>api.frankfurter.app</strong>: Required to fetch currency exchange rates for the profit calculator</li>
+        <li>No other domains are accessed</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>5. Data Security</h2>
       <ul>
-        <li><strong>Encryption:</strong> All cached data is stored using Chrome's encrypted Storage API</li>
-        <li><strong>XSS Protection:</strong> Enterprise-grade HTML sanitization prevents malicious code injection</li>
-        <li><strong>HTTPS Only:</strong> All network requests use secure HTTPS connections</li>
-        <li><strong>CSP (Content Security Policy):</strong> Strict security headers prevent unauthorized script execution</li>
-        <li><strong>No Remote Code:</strong> Extension code is bundled and signed - no remote code execution</li>
+        <li><strong>Local storage only:</strong> All data is stored using Chrome's built-in <code>chrome.storage.local</code>, which is sandboxed to the extension and inaccessible to websites or other extensions</li>
+        <li><strong>XSS protection:</strong> All data displayed in the extension UI is sanitized before rendering to prevent injection attacks</li>
+        <li><strong>HTTPS only:</strong> All network requests use secure HTTPS connections</li>
+        <li><strong>Content Security Policy:</strong> A strict CSP is enforced in <code>manifest.json</code>, preventing unauthorized script execution</li>
+        <li><strong>No remote code:</strong> The extension runs only bundled, Chrome Web Store-verified code. No code is downloaded or executed remotely.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>6. Data Retention</h2>
+
+      <h3>6.1 Retention Schedule</h3>
       <ul>
-        <li><strong>Cached eBay Data:</strong> Automatically deleted after 24 hours</li>
-        <li><strong>Fee Configuration:</strong> Updated every 7 days (cached for up to 30 days)</li>
-        <li><strong>User Preferences:</strong> Kept until you uninstall the extension or clear browser data</li>
-        <li><strong>Manual Deletion:</strong> Clear all data via Chrome settings → Privacy → Clear browsing data → Cached images and files</li>
+        <li><strong>Sold history cache:</strong> Automatically deleted after 24 hours per entry</li>
+        <li><strong>Calculator usage timestamps:</strong> Automatically deleted after 2 hours per entry</li>
+        <li><strong>Currency exchange rates:</strong> Automatically refreshed every 12 hours</li>
+        <li><strong>Disclaimer acceptance timestamp:</strong> Retained until the extension is uninstalled (a single date value, no personal data)</li>
+        <li><strong>Installed version number:</strong> Updated on each extension update, retained until uninstall</li>
       </ul>
-      
-      <h3>6.1 How Long We Keep Your Data</h3>
-      <p><strong>Short Answer:</strong> Maximum 24 hours for most data, 30 days for fee configurations.</p>
+
+      <h3>6.2 Automatic Cleanup</h3>
       <ul>
-        <li><strong>Sold History Cache:</strong> 24 hours maximum, then automatically purged</li>
-        <li><strong>Request Timestamps:</strong> 1 minute only (for rate limiting)</li>
-        <li><strong>Fee Data:</strong> 30 days maximum (public eBay fee information)</li>
-        <li><strong>Disclaimer Acceptance:</strong> Permanent until extension uninstall (one timestamp only)</li>
-      </ul>
-      
-      <h3>6.2 Automatic Data Cleanup</h3>
-      <ul>
-        <li>Old cache entries are automatically deleted when expired (24 hours)</li>
-        <li>When cache reaches 200 items, oldest items are automatically removed</li>
-        <li>No manual cleanup needed - everything is automatic</li>
-        <li>Uninstalling the extension deletes ALL data immediately</li>
+        <li>Cache entries expire automatically — no manual action needed</li>
+        <li>When the cache reaches its 200-item limit, the oldest entries are removed to make space</li>
+        <li>Uninstalling the extension immediately and permanently deletes all locally stored data</li>
+        <li>You can also manually clear all extension data via Chrome Settings → Privacy and Security → Clear browsing data</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>7. Children's Privacy</h2>
-      <p>SoldinSight is not directed at children under 13. We do not knowingly collect any information from children. If you are under 13, do not use this extension.</p>
+      <p>SoldinSight is intended for use by adults and is not directed at children under the age of 13. We do not knowingly collect information from anyone under 13. If you are under 13, please do not use this extension.</p>
     </div>
 
     <div class="section">
       <h2>8. International Users</h2>
-      <p>SoldinSight works on international eBay sites (UK, Australia, Canada, Germany, France, Italy, Spain, Japan). All privacy protections apply equally regardless of your location.</p>
-      <p>Your data never leaves your device - there is no server-side processing or cloud storage.</p>
+      <p>SoldinSight supports eBay sites across multiple regions including the United States, United Kingdom, Australia, Canada, Germany, France, Italy, Spain, and Japan. All privacy protections described in this policy apply equally to users in all regions.</p>
+      <p>Because no data is transmitted to any server, there is no cross-border data transfer of any kind. All data remains on your local device.</p>
     </div>
 
     <div class="section">
-      <h2>9. Third-Party Services</h2>
-      <p>SoldinSight integrates with two external services:</p>
-      <ul>
-        <li><strong>eBay.com:</strong> To retrieve public sold listing data (required for core functionality)</li>
-        <li><strong>Frankfurter API (api.frankfurter.app):</strong> To retrieve live currency exchange rates for the built-in currency converter. This is a free, open European Central Bank data service. Only a simple rate request is sent — no personal data is transmitted. Rates are cached locally for 12 hours to minimise requests.</li>
-      </ul>
-      <p>eBay does not receive any personal information from SoldinSight beyond what you would normally share when browsing eBay listings.</p>
-      
-      <h3>9.1 eBay Integration Details</h3>
-      <ul>
-        <li><strong>What We Request:</strong> Public sold listing data (titles, prices, dates, seller usernames)</li>
-        <li><strong>How:</strong> Direct HTTPS requests to eBay.com using your existing session</li>
-        <li><strong>What eBay Knows:</strong> Only that you're viewing sold history (same as viewing it manually)</li>
-        <li><strong>Rate Limiting:</strong> A 1–3 second random delay between requests to respect eBay's servers</li>
-        <li><strong>No Data Sent:</strong> We never send your personal information to eBay</li>
-      </ul>
-      
-      <h3>9.2 No Other Third Parties</h3>
-      <p>We explicitly <strong>DO NOT</strong> use:</p>
+      <h2>9. Third-Party Services Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Personal Data Sent</th>
+            <th>Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>eBay.com</strong></td>
+            <td>Retrieve public sold listing data</td>
+            <td>None</td>
+            <td>Yes — core feature</td>
+          </tr>
+          <tr>
+            <td><strong>api.frankfurter.app</strong></td>
+            <td>Live currency exchange rates</td>
+            <td>None</td>
+            <td>Only when using currency converter</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Services We Explicitly Do Not Use</h3>
       <ul>
         <li>❌ Google Analytics or any analytics platform</li>
-        <li>❌ Advertising networks or trackers</li>
-        <li>❌ Cloud storage services</li>
-        <li>❌ External APIs (except eBay)</li>
+        <li>❌ Advertising or remarketing networks</li>
+        <li>❌ Cloud storage or developer-owned servers</li>
         <li>❌ Social media integrations</li>
-        <li>❌ Email marketing services</li>
-        <li>❌ Payment processors (extension is 100% free)</li>
+        <li>❌ Email marketing or CRM services</li>
+        <li>❌ Payment processors (the extension is free)</li>
+        <li>❌ Crash reporting or telemetry services</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>10. Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. Changes will be reflected in the "Effective Date" at the top of this page.</p>
-      <p>Material changes will be communicated through:</p>
+      <h2>10. Your Rights and Controls</h2>
       <ul>
-        <li>Chrome Web Store extension update notes</li>
-        <li>In-app notification (if applicable)</li>
+        <li><strong>Inspect your data:</strong> Open Chrome DevTools → Application → Storage → Extension Storage to view everything SoldinSight has stored locally</li>
+        <li><strong>Delete your data:</strong> Uninstall the extension, or go to Chrome Settings → Privacy and Security → Clear browsing data</li>
+        <li><strong>Opt out completely:</strong> Uninstalling the extension immediately stops all data processing and deletes all stored data</li>
+        <li><strong>No account required:</strong> SoldinSight does not require registration, login, or any form of account creation</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>11. Your Rights</h2>
-      <ul>
-        <li><strong>Access:</strong> All your data is stored locally - you can inspect it via Chrome DevTools</li>
-        <li><strong>Deletion:</strong> Uninstall the extension or clear browser data to delete all stored information</li>
-        <li><strong>Portability:</strong> Data is stored in standard Chrome Storage format</li>
-        <li><strong>Opt-Out:</strong> Simply uninstall the extension to stop all data processing</li>
-      </ul>
+      <h2>11. Transparency</h2>
+      <p>Chrome Web Store reviewers and users can verify all privacy claims in this policy by inspecting the extension source code directly in Chrome DevTools after installation. Every network request made by the extension is visible in the DevTools Network tab. No obfuscated code is used.</p>
     </div>
 
     <div class="section">
-      <h2>12. Open Source</h2>
-      <p>SoldinSight's code is available for inspection. You can:</p>
-      <ul>
-        <li>Review the source code to verify our privacy claims</li>
-        <li>Inspect network requests using Chrome DevTools</li>
-        <li>Examine local storage using Chrome's Storage Inspector</li>
-      </ul>
-      <p>Transparency is our commitment to your privacy.</p>
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the extension's functionality. The Effective Date at the top of this page will always reflect the most recent revision. Significant changes will be noted in the Chrome Web Store update release notes.</p>
     </div>
 
     <div class="section">
-      <h2>13. Contact Information</h2>
-      <p>If you have questions about this Privacy Policy or SoldinSight's privacy practices:</p>
+      <h2>13. Contact</h2>
+      <p>If you have questions or concerns about this Privacy Policy or SoldinSight's privacy practices, please contact us:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a></li>
-        <li><strong>Response Time:</strong> We typically respond within 24-48 hours</li>
-        <li><strong>Support:</strong> You can also use the Chrome Web Store support system to report issues</li>
+        <li><strong>Response time:</strong> We aim to respond within 48 hours</li>
       </ul>
-      <p><strong>Note:</strong> For Chrome Web Store support, you can also use the extension's review system.</p>
     </div>
 
     <div class="highlight">
       <p><strong>📌 Summary:</strong></p>
       <ul style="margin-bottom: 0;">
-        <li>✅ No data collection</li>
-        <li>✅ No tracking</li>
-        <li>✅ No analytics</li>
-        <li>✅ No external servers (only eBay.com for sold data + Frankfurter API for currency rates)</li>
-        <li>✅ Everything stored locally</li>
-        <li>✅ Auto-deleted after use</li>
-        <li>✅ Open source & transparent</li>
+        <li>✅ No personal data collected</li>
+        <li>✅ No tracking or analytics</li>
+        <li>✅ No developer-owned servers</li>
+        <li>✅ Only two external connections — eBay (sold data) and Frankfurter (currency rates) — no personal data transmitted to either</li>
+        <li>✅ All data stored locally on your device only</li>
+        <li>✅ Automatically deleted — no manual cleanup needed</li>
+        <li>✅ Uninstalling deletes everything immediately</li>
       </ul>
     </div>
 
