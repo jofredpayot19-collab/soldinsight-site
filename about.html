@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 Jofred Curada Payot. All Rights Reserved. SoldinSight — eBay Sold History & Profit Calculator -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoldinSight - About</title>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.8;
+      color: var(--t-sec);
+      background: var(--bg);
+      padding: 24px;
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 40px;
+      border-radius: 12px 12px 0 0;
+      margin: -40px -40px 32px -40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(99,102,241,0.06) 100%);
+      pointer-events: none;
+    }
+    .header h1 { font-size: 32px; font-weight: 700; color: var(--green-text); margin-bottom: 8px; }
+    .header p  { color: var(--t-sec); font-size: 16px; opacity: 0.85; }
+
+    /* ── Headings ── */
+    h2 {
+      color: var(--green-text);
+      font-size: 22px;
+      margin-top: 32px; margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+    h3 {
+      color: var(--green-text);
+      font-size: 17px;
+      margin-top: 18px; margin-bottom: 8px;
+      font-weight: 600;
+    }
+    h4 { color: var(--t-sec); font-size: 14px; margin-top: 14px; margin-bottom: 6px; font-weight: 600; }
+
+    /* ── Body text ── */
+    p  { margin-bottom: 14px; color: var(--t-sec); font-size: 15px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; color: var(--t-sec); font-size: 15px; line-height: 1.7; }
+    strong { color: var(--t-pri); font-weight: 600; }
+    code {
+      background: var(--bg-input); padding: 2px 7px;
+      border-radius: 4px; font-family: 'Courier New', monospace;
+      font-size: 13px; color: var(--green-text);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Links ── */
+    a { color: var(--green-text); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); text-decoration: underline; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 28px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: rgba(34,197,94,0.07);
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      margin: 18px 0;
+    }
+    .highlight p { margin: 0; color: var(--t-sec); }
+
+    /* ── Feature grid ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .feature-card {
+      background: var(--bg-alt);
+      padding: 18px; border-radius: 10px; text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--green);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .feature-card .icon { font-size: 32px; margin-bottom: 8px; }
+    .feature-card h3 { margin: 0; font-size: 15px; color: var(--green-text); }
+    .feature-card p  { margin: 6px 0 0 0; font-size: 13px; color: var(--t-muted); }
+
+    /* ── Stats grid ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .stat-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 18px; border-radius: 10px; text-align: center;
+      transition: all 0.25s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 14px rgba(34,197,94,0.15);
+      transform: scale(1.03);
+    }
+    .stat-card .number { font-size: 32px; font-weight: 700; display: block; margin-bottom: 4px; color: var(--green-text); }
+    .stat-card .label  { font-size: 12px; color: var(--t-muted); text-transform: uppercase; letter-spacing: 0.4px; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; border-left: 2px solid var(--green-dim); margin: 18px 0; }
+    .timeline-item { margin-bottom: 20px; position: relative; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -35px; top: 5px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green); border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--green-dim);
+    }
+    .timeline-item h3 { margin-top: 0; color: var(--green-text); font-size: 16px; }
+
+    /* ── FAQ ── */
+    .faq-item {
+      background: var(--bg-alt); padding: 20px; border-radius: 8px;
+      margin-bottom: 14px; border-left: 3px solid var(--green);
+    }
+    .faq-item h3 { color: var(--green-text); margin-top: 0; font-size: 16px; margin-bottom: 8px; }
+    .faq-item strong { color: var(--green-text); }
+    .faq-item p { font-size: 14px; margin-bottom: 0; }
+
+    /* ── Search box ── */
+    .search-box { margin-bottom: 28px; }
+    .search-box input {
+      width: 100%; padding: 14px 18px; font-size: 15px;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--bg-input); color: var(--t-pri);
+      transition: all 0.2s ease;
+    }
+    .search-box input:focus {
+      outline: none; border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .search-box input::placeholder { color: var(--t-muted); }
+
+    /* ── Category grid ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-bottom: 36px;
+    }
+    .category-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      cursor: pointer; transition: all 0.25s ease; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .category-card:hover {
+      transform: translateY(-3px); border-color: var(--green);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .category-card h3 { font-size: 16px; margin: 0 0 6px 0; color: var(--t-pri); }
+    .category-card p  { font-size: 13px; color: var(--t-muted); margin: 0; }
+
+    /* ── Contact form / cards ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .contact-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .contact-card:hover { border-color: var(--green); box-shadow: 0 4px 14px rgba(34,197,94,0.12); }
+    .contact-card .icon { font-size: 32px; margin-bottom: 10px; }
+    .contact-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 6px 0; }
+    .contact-card p  { color: var(--t-muted); font-size: 13px; margin: 0; }
+
+    /* ── Index hub cards ── */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .hub-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      text-decoration: none; display: block;
+      transition: all 0.25s ease;
+    }
+    .hub-card:hover {
+      transform: translateY(-3px); border-color: var(--green);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15); text-decoration: none;
+    }
+    .hub-card .icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .hub-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 4px 0; }
+    .hub-card p  { color: var(--t-muted); font-size: 12px; margin: 0; }
+
+    /* ── Info / warning / success boxes ── */
+    .info-box {
+      background: rgba(99,102,241,0.08);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .info-box p { margin: 0; color: var(--t-sec); font-size: 14px; }
+    .warning-box {
+      background: rgba(245,158,11,0.08);
+      border-left: 4px solid var(--orange);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .warning-box p { margin: 0; color: var(--orange); font-size: 14px; }
+    .danger-box {
+      background: rgba(239,68,68,0.08);
+      border-left: 4px solid var(--red);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .danger-box p { margin: 0; color: var(--red); font-size: 14px; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th { background: var(--bg-alt); color: var(--t-muted); font-size: 11px; text-transform: uppercase;
+         letter-spacing: 0.4px; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--t-sec); }
+    tr:hover td { background: var(--bg-alt); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.2s ease; text-decoration: none;
+    }
+    .btn-green {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dim) 100%);
+      color: #111318;
+      box-shadow: 0 2px 8px rgba(34,197,94,0.3);
+    }
+    .btn-green:hover { box-shadow: 0 4px 14px rgba(34,197,94,0.45); transform: translateY(-1px); color: #111318; text-decoration: none; }
+    .btn-outline {
+      background: transparent; color: var(--green-text);
+      border: 1px solid var(--green-dim);
+    }
+    .btn-outline:hover { background: rgba(34,197,94,0.08); color: var(--green-text); text-decoration: none; }
+
+    /* ── Footer ── */
+    .page-footer-wrap {
+      max-width: 968px; margin: 0 auto; padding: 0 24px;
+    }
+    .footer {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center; color: var(--t-muted); font-size: 13px;
+    }
+    .footer-nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; max-width: 920px; margin-left: auto; margin-right: auto; }
+
+    .quick-links, .footer-links {
+      display: flex; justify-content: center; gap: 14px;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .quick-links a, .footer-links a {
+      color: var(--t-muted); padding: 6px 14px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 13px; transition: all 0.2s ease; text-decoration: none;
+    }
+    .quick-links a:hover, .footer-links a:hover {
+      color: var(--green-text); border-color: var(--green);
+      background: rgba(34,197,94,0.06); text-decoration: none;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar       { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--t-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .container { padding: 20px; }
+      .header { margin: -20px -20px 22px -20px; padding: 22px 20px; }
+      .header h1 { font-size: 24px; }
+      h2 { font-size: 19px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 About SoldinSight</h1>
+      <p>Know your profit before you list. Every time.</p>
+    </div>
+
+    <div class="section">
+      <h2>What is SoldinSight?</h2>
+      <p>SoldinSight is a free Chrome extension designed to help anyone on eBay make informed decisions by providing instant access to sold listing history and accurate profit calculations.</p>
+      <p>Whether you're a casual seller clearing out unwanted items or a full-time reseller managing hundreds of listings — SoldinSight gives you the data you need to price confidently and sell profitably.</p>
+    </div>
+
+    <div class="highlight">
+      <p><strong>🎯 Our Mission:</strong> Make eBay market research accessible, fast, and privacy-focused for everyone.</p>
+    </div>
+
+    <div class="section">
+      <h2>Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Sold History</h3>
+          <p>Complete sold listing data at your fingertips</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💰</div>
+          <h3>Profit Calculator</h3>
+          <p>Accurate eBay fee calculations</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>Smart Caching</h3>
+          <p>80%+ cache hit rate for instant results</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🌍</div>
+          <h3>International</h3>
+          <p>9 eBay domains supported</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔒</div>
+          <h3>Private</h3>
+          <p>No tracking or data collection</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🆓</div>
+          <h3>Free Forever</h3>
+          <p>No subscriptions or hidden costs</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔖</div>
+          <h3>Save Items</h3>
+          <p>Save up to 50 listings with full variation support</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📋</div>
+          <h3>Export CSV</h3>
+          <p>Export your saved items to Excel/CSV anytime</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔥</div>
+          <h3>Demand Score</h3>
+          <p>30-day demand rating with price pattern &amp; trend signals</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="number" id="about-version">1.0</span>
+          <span class="label">Version</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">9</span>
+          <span class="label">eBay Sites</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">6</span>
+          <span class="label">Currencies</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">80%+</span>
+          <span class="label">Cache Hit Rate</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">24h</span>
+          <span class="label">Cache Duration</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">0</span>
+          <span class="label">Data Collection</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Our Story</h2>
+      <p>SoldinSight was born from a simple frustration: researching eBay sold prices was slow and tedious. Clicking through multiple pages, manually calculating fees, and keeping track of sold items took valuable time away from actual selling.</p>
+      <p>We built SoldinSight to solve this problem. Our goal was to create a tool that:</p>
+      <ul>
+        <li>Provides instant access to sold history</li>
+        <li>Calculates profits automatically</li>
+        <li>Works fast with smart caching</li>
+        <li>Respects user privacy completely</li>
+        <li>Remains free for everyone</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Version History</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>v1.0.0 - February 15, 2026</h3>
+          <p><strong>Initial Public Release</strong></p>
+          <ul style="margin-top: 8px;">
+            <li>Sold history viewer with price analytics</li>
+            <li>Profit calculator with accurate eBay fees</li>
+            <li>Multi-currency support (USD, GBP, EUR, AUD, CAD, JPY)</li>
+            <li>Multi-region support (US, UK, Germany, Australia, Canada — with extended support for France, Italy, Spain &amp; Japan)</li>
+            <li><strong>Private Seller mode</strong> for UK &amp; Germany — 0% FVF, ROF waived, correct international fees</li>
+            <li>Variation filtering for products with multiple options</li>
+            <li>Sales velocity and statistics tracking</li>
+            <li>Smart caching (24-hour TTL, 200-item capacity)</li>
+            <li>Enterprise security (XSS protection, CSP)</li>
+            <li>Manifest V3 compliant</li>
+            <li>Privacy-first design</li>
+            <li>9 international eBay sites</li>
+            <li><strong>Save Items</strong> — save up to 50 listings with per-variation support</li>
+            <li><strong>Export CSV</strong> — export saved items including image URL, seller, variation, and sold data</li>
+            <li><strong>Bulk delete</strong> — select and delete multiple saved items at once, with Delete All option</li>
+            <li><strong>Demand Score</strong> — fixed 30-day demand rating (LOW / MEDIUM / HIGH / VERY HIGH) with price pattern and trend signals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Technology</h2>
+      <p>SoldinSight is built with modern web technologies and best practices:</p>
+      <ul>
+        <li><strong>Manifest V3:</strong> Latest Chrome extension standard</li>
+        <li><strong>Smart Caching:</strong> Chrome Storage API — 24-hour TTL, up to 200 items</li>
+        <li><strong>Security First:</strong> XSS protection, CSP, input validation</li>
+        <li><strong>Rate Limiting:</strong> Respects eBay's servers</li>
+        <li><strong>Modular Architecture:</strong> Clean, maintainable code</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Privacy Commitment</h2>
+      <div class="highlight">
+        <p><strong>🔒 Your Privacy is Our Priority</strong></p>
+      </div>
+      <p>We take privacy seriously. SoldinSight:</p>
+      <ul>
+        <li>✅ <strong>No data collection</strong> - We don't collect any personal information</li>
+        <li>✅ <strong>No tracking</strong> - No analytics, cookies, or tracking pixels</li>
+        <li>✅ <strong>Local storage only</strong> - All data stays on your device</li>
+        <li>✅ <strong>No external servers</strong> - Direct eBay access only</li>
+        <li>✅ <strong>Open source ready</strong> - Code can be reviewed</li>
+        <li>✅ <strong>HTTPS only</strong> - Secure connections always</li>
+      </ul>
+      <p>Read our full <a href="https://jofredpayot19-collab.github.io/soldinsight-site/privacy.html" target="_blank">Privacy Policy</a> for details.</p>
+    </div>
+
+    <div class="section">
+      <h2>Supported Platforms</h2>
+      <h3>eBay Sites:</h3>
+      <ul>
+        <li>🇺🇸 eBay.com (United States) - USD</li>
+        <li>🇬🇧 eBay.co.uk (United Kingdom) - GBP</li>
+        <li>🇦🇺 eBay.com.au (Australia) - AUD</li>
+        <li>🇨🇦 eBay.ca (Canada) - CAD</li>
+        <li>🇩🇪 eBay.de (Germany) - EUR</li>
+        <li>🇫🇷 eBay.fr (France) - EUR</li>
+        <li>🇮🇹 eBay.it (Italy) - EUR</li>
+        <li>🇪🇸 eBay.es (Spain) - EUR</li>
+        <li>🇯🇵 eBay.co.jp (Japan) - JPY</li>
+      </ul>
+
+      <h3>Browsers:</h3>
+      <ul>
+        <li>✅ Google Chrome (recommended)</li>
+        <li>✅ Microsoft Edge</li>
+        <li>✅ Brave Browser</li>
+        <li>✅ Opera</li>
+        <li>❌ Firefox (not compatible - different manifest format)</li>
+        <li>❌ Safari (not compatible - different extension API)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What's Next</h2>
+      <p>We're constantly working to improve SoldinSight based on user feedback. Got an idea? <a href="https://jofredpayot19-collab.github.io/soldinsight-site/contact.html" target="_blank">Let us know!</a></p>
+    </div>
+
+    <div class="section">
+      <h2>Not Affiliated with eBay</h2>
+      <div class="highlight" style="background: rgba(245,158,11,0.08); border-left: 4px solid #f59e0b;">
+        <p style="color: #f59e0b;"><strong>⚠️ Independent Tool Disclaimer</strong></p>
+        <p>SoldinSight is an <strong>independent third-party research tool</strong> and is <strong>NOT</strong> affiliated with, endorsed by, or sponsored by eBay Inc.</p>
+      </div>
+      
+      <p><strong>What this means:</strong></p>
+      <ul>
+        <li>This is not an official eBay product or service</li>
+        <li>eBay does not endorse or support SoldinSight</li>
+        <li>We access only publicly available eBay data (same data visible to all users)</li>
+        <li>Users must comply with eBay's Terms of Service when using this tool</li>
+        <li>This tool is intended for eBay sellers to inform pricing and profit decisions</li>
+      </ul>
+      
+      <p><strong>Data Usage:</strong> SoldinSight displays publicly accessible sold listing information from eBay - the same data any user can view by clicking "Sold listings" on an eBay item page. We simply organize this public information in a more convenient format for research and analysis.</p>
+      
+      <p>All eBay trademarks, service marks, and company names are the property of eBay Inc. Any references to eBay are for descriptive purposes only.</p>
+    </div>
+
+    <div class="section">
+      <h2>Open Source</h2>
+      <p>We believe in transparency. While not currently on GitHub, our code follows open source principles:</p>
+      <ul>
+        <li>Clean, readable code</li>
+        <li>Comprehensive comments</li>
+        <li>Modular architecture</li>
+        <li>Security best practices</li>
+      </ul>
+      <p>Interested in the code? Feel free to inspect it via Chrome DevTools or <a href="https://jofredpayot19-collab.github.io/soldinsight-site/contact.html" target="_blank">contact us</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2>Credits & Acknowledgments</h2>
+      <p>SoldinSight was made possible by:</p>
+      <ul>
+        <li><strong>Chrome Extension APIs</strong> - Google's powerful extension platform</li>
+        <li><strong>eBay</strong> - For providing public sold listing data</li>
+        <li><strong>Our Users</strong> - Thank you for your feedback and support!</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Get Started</h2>
+      <p>Ready to supercharge your eBay research?</p>
+      <ol>
+        <li>Install SoldinSight from the Chrome Web Store</li>
+        <li>Visit any eBay listing</li>
+        <li>Click the "Sold History" button</li>
+        <li>Start making data-driven decisions!</li>
+      </ol>
+      <p>Need help? Check out our <a href="help.html">Help Center</a> or <a href="https://jofredpayot19-collab.github.io/soldinsight-site/contact.html" target="_blank">contact us</a>.</p>
+    </div>
+
+    <div class="highlight">
+      <p style="text-align: center; margin: 0; font-size: 22px;">
+        <strong>💚 Thank you for using SoldinSight!</strong><br>
+        <span style="font-size: 17px;">We're here to help you succeed on eBay.</span>
+      </p>
+    </div></div>
+
+    <div class="page-footer-wrap"><div class="footer">
+      <p><strong>SoldinSight</strong></p>
+      <p>Making eBay research simple for everyone</p>
+      <p style="margin-top: 8px; font-size: 13px; color: #6b7280;">Developed by JCP</p>
+      
+      <div class="quick-links">
+        <a href="https://jofredpayot19-collab.github.io/soldinsight-site/contact.html" target="_blank">Contact Us</a>
+        <a href="https://jofredpayot19-collab.github.io/soldinsight-site/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="https://jofredpayot19-collab.github.io/soldinsight-site/terms.html" target="_blank">Terms of Service</a>
+        <a href="help.html">Help Center</a>
+      </div>
+      
+      <p style="margin-top: 20px;">
+        <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a>
+      </p>
+    </div>
+  </div>
+  <script src="about-page.js"></script>
+</body>
+</html>
