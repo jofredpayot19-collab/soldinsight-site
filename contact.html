@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 Jofred Curada Payot. All Rights Reserved. SoldinSight — eBay Sold History & Profit Calculator -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoldinSight - Contact Us</title>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.8;
+      color: var(--t-sec);
+      background: var(--bg);
+      padding: 24px;
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 40px;
+      border-radius: 12px 12px 0 0;
+      margin: -40px -40px 32px -40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(99,102,241,0.06) 100%);
+      pointer-events: none;
+    }
+    .header h1 { font-size: 32px; font-weight: 700; color: var(--t-pri); margin-bottom: 8px; }
+    .header p  { color: var(--t-sec); font-size: 16px; opacity: 0.85; }
+
+    /* ── Headings ── */
+    h2 {
+      color: var(--green-text);
+      font-size: 22px;
+      margin-top: 32px; margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+    h3 {
+      color: var(--t-pri);
+      font-size: 17px;
+      margin-top: 18px; margin-bottom: 8px;
+      font-weight: 600;
+    }
+    h4 { color: var(--t-sec); font-size: 14px; margin-top: 14px; margin-bottom: 6px; font-weight: 600; }
+
+    /* ── Body text ── */
+    p  { margin-bottom: 14px; color: var(--t-sec); font-size: 15px; }
+    ul, ol { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; color: var(--t-sec); font-size: 15px; line-height: 1.7; }
+    strong { color: var(--t-pri); font-weight: 600; }
+    code {
+      background: var(--bg-input); padding: 2px 7px;
+      border-radius: 4px; font-family: 'Courier New', monospace;
+      font-size: 13px; color: var(--green-text);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Links ── */
+    a { color: var(--green-text); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); text-decoration: underline; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 28px; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: rgba(34,197,94,0.07);
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      margin: 18px 0;
+    }
+    .highlight p { margin: 0; color: var(--t-sec); }
+
+    /* ── Feature grid ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .feature-card {
+      background: var(--bg-alt);
+      padding: 18px; border-radius: 10px; text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .feature-card .icon { font-size: 32px; margin-bottom: 8px; }
+    .feature-card h3 { margin: 0; font-size: 15px; color: var(--green-text); }
+    .feature-card p  { margin: 6px 0 0 0; font-size: 13px; color: var(--t-muted); }
+
+    /* ── Stats grid ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .stat-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 18px; border-radius: 10px; text-align: center;
+      transition: all 0.25s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--green-dim);
+      box-shadow: 0 4px 14px rgba(34,197,94,0.15);
+      transform: scale(1.03);
+    }
+    .stat-card .number { font-size: 32px; font-weight: 700; display: block; margin-bottom: 4px; color: var(--green-text); }
+    .stat-card .label  { font-size: 12px; color: var(--t-muted); text-transform: uppercase; letter-spacing: 0.4px; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; border-left: 2px solid var(--green-dim); margin: 18px 0; }
+    .timeline-item { margin-bottom: 20px; position: relative; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -35px; top: 5px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green); border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--green-dim);
+    }
+    .timeline-item h3 { margin-top: 0; color: var(--green-text); font-size: 16px; }
+
+    /* ── FAQ ── */
+    .faq-item {
+      background: var(--bg-alt); padding: 20px; border-radius: 8px;
+      margin-bottom: 14px; border-left: 3px solid var(--green);
+    }
+    .faq-item h3 { color: var(--green-text); margin-top: 0; font-size: 16px; margin-bottom: 8px; }
+    .faq-item strong { color: var(--green-text); }
+    .faq-item p { font-size: 14px; margin-bottom: 0; }
+
+    /* ── Search box ── */
+    .search-box { margin-bottom: 28px; }
+    .search-box input {
+      width: 100%; padding: 14px 18px; font-size: 15px;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--bg-input); color: var(--t-pri);
+      transition: all 0.2s ease;
+    }
+    .search-box input:focus {
+      outline: none; border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .search-box input::placeholder { color: var(--t-muted); }
+
+    /* ── Category grid ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-bottom: 36px;
+    }
+    .category-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      cursor: pointer; transition: all 0.25s ease; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .category-card:hover {
+      transform: translateY(-3px); border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15);
+    }
+    .category-card h3 { font-size: 16px; margin: 0 0 6px 0; color: var(--t-pri); }
+    .category-card p  { font-size: 13px; color: var(--t-muted); margin: 0; }
+
+    /* ── Contact form / cards ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .contact-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .contact-card:hover { border-color: var(--green-dim); box-shadow: 0 4px 14px rgba(34,197,94,0.12); }
+    .contact-card .icon { font-size: 32px; margin-bottom: 10px; }
+    .contact-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 6px 0; }
+    .contact-card p  { color: var(--t-muted); font-size: 13px; margin: 0; }
+
+    /* ── Index hub cards ── */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .hub-card {
+      background: var(--bg-alt); padding: 22px; border-radius: 10px;
+      text-align: center; border: 1px solid var(--border);
+      text-decoration: none; display: block;
+      transition: all 0.25s ease;
+    }
+    .hub-card:hover {
+      transform: translateY(-3px); border-color: var(--green-dim);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.15); text-decoration: none;
+    }
+    .hub-card .icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .hub-card h3 { color: var(--green-text); font-size: 16px; margin: 0 0 4px 0; }
+    .hub-card p  { color: var(--t-muted); font-size: 12px; margin: 0; }
+
+    /* ── Info / warning / success boxes ── */
+    .info-box {
+      background: rgba(99,102,241,0.08);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .info-box p { margin: 0; color: var(--t-sec); font-size: 14px; }
+    .warning-box {
+      background: rgba(245,158,11,0.08);
+      border-left: 4px solid var(--orange);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .warning-box p { margin: 0; color: var(--orange); font-size: 14px; }
+    .danger-box {
+      background: rgba(239,68,68,0.08);
+      border-left: 4px solid var(--red);
+      padding: 14px 16px; border-radius: 6px; margin: 16px 0;
+    }
+    .danger-box p { margin: 0; color: var(--red); font-size: 14px; }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th { background: var(--bg-alt); color: var(--t-muted); font-size: 11px; text-transform: uppercase;
+         letter-spacing: 0.4px; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--t-sec); }
+    tr:hover td { background: var(--bg-alt); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.2s ease; text-decoration: none;
+    }
+    .btn-green {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dim) 100%);
+      color: #111318;
+      box-shadow: 0 2px 8px rgba(34,197,94,0.3);
+    }
+    .btn-green:hover { box-shadow: 0 4px 14px rgba(34,197,94,0.45); transform: translateY(-1px); color: #111318; text-decoration: none; }
+    .btn-outline {
+      background: transparent; color: var(--green-text);
+      border: 1px solid var(--green-dim);
+    }
+    .btn-outline:hover { background: rgba(34,197,94,0.08); color: var(--green-text); text-decoration: none; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center; color: var(--t-muted); font-size: 13px;
+    }
+    .footer-nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+
+    .quick-links, .footer-links {
+      display: flex; justify-content: center; gap: 14px;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .quick-links a, .footer-links a {
+      color: var(--t-muted); padding: 6px 14px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 13px; transition: all 0.2s ease; text-decoration: none;
+    }
+    .quick-links a:hover, .footer-links a:hover {
+      color: var(--green-text); border-color: var(--green-dim);
+      background: rgba(34,197,94,0.06); text-decoration: none;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar       { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--t-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .container { padding: 20px; }
+      .header { margin: -20px -20px 22px -20px; padding: 22px 20px; }
+      .header h1 { font-size: 24px; }
+      h2 { font-size: 19px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📧 Contact Us</h1>
+      <p>SoldinSight Chrome Extension Support</p>
+    </div>
+
+    <div class="response-time">
+      <p><strong>⏱️ Response Time:</strong> We typically respond within 24-48 hours. For urgent issues, please use the Chrome Web Store review system.</p>
+    </div>
+
+    <h2>Get in Touch</h2>
+    
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3><span class="icon">📧</span> Email Support</h3>
+        <p>For general inquiries, bug reports, and feature requests:</p>
+        <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a>
+      </div>
+
+      <div class="contact-card">
+        <h3><span class="icon">🐛</span> Bug Reports</h3>
+        <p>Found a bug? Report it via email:</p>
+        <a href="mailto:soldinsight@gmail.com?subject=Bug%20Report">soldinsight@gmail.com</a>
+        <p style="margin-top: 10px; font-size: 14px;">Please include browser version and steps to reproduce.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3><span class="icon">💡</span> Feature Requests</h3>
+        <p>Have an idea? We'd love to hear it:</p>
+        <a href="mailto:soldinsight@gmail.com?subject=Feature%20Request">Submit Request</a>
+        <p style="margin-top: 10px; font-size: 14px;">Email us your suggestions anytime.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3><span class="icon">⭐</span> Chrome Web Store</h3>
+        <p>Rate and review the extension:</p>
+        <a href="https://chromewebstore.google.com/search/SoldinSight" target="_blank">Leave a Review</a>
+        <p style="margin-top: 10px; font-size: 14px;">Your feedback helps us improve!</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>What to Include in Your Message</h2>
+      
+      <div class="faq-item">
+        <strong>For Bug Reports:</strong>
+        <ul style="margin-top: 8px;">
+          <li>Chrome version (chrome://version/)</li>
+          <li>Extension version (check Extensions page)</li>
+          <li>What you were doing when the bug occurred</li>
+          <li>Any error messages (check browser console: F12)</li>
+          <li>Screenshots if applicable</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <strong>For Support Requests:</strong>
+        <ul style="margin-top: 8px;">
+          <li>Clear description of the issue</li>
+          <li>What you've already tried</li>
+          <li>Which eBay site you're using (ebay.com, ebay.co.uk, etc.)</li>
+          <li>Browser console errors (F12 → Console tab)</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <strong>For Feature Requests:</strong>
+        <ul style="margin-top: 8px;">
+          <li>Description of the feature</li>
+          <li>Why it would be useful</li>
+          <li>How you envision it working</li>
+          <li>Any examples from other extensions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <strong>Q: How long until I get a response?</strong>
+        <p>We aim to respond to all inquiries within 24-48 hours. Complex technical issues may take longer to investigate.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Do you offer phone support?</strong>
+        <p>Currently, we only offer email support. This allows us to better track issues and provide detailed responses.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Can you help with eBay account issues?</strong>
+        <p>No, we can only help with issues related to the SoldinSight extension. For eBay account issues, please contact eBay directly.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q: Is my data safe when I contact you?</strong>
+        <p>Yes! We never share your information with third parties. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p><strong>⚠️ Important:</strong> We are not affiliated with eBay. For eBay-specific issues (account problems, selling fees disputes, listing issues), please contact eBay support directly.</p>
+    </div>
+
+    <div class="section">
+      <h2>Before You Contact Us</h2>
+      <p>Please try these troubleshooting steps first:</p>
+      <ul>
+        <li><strong>Refresh the page</strong> - Many issues are resolved by refreshing the eBay listing page</li>
+        <li><strong>Clear cache</strong> - Open browser console (F12) and type: <code>CacheManager.clearAll()</code></li>
+        <li><strong>Check browser console</strong> - Press F12 and look for error messages in the Console tab</li>
+        <li><strong>Reinstall extension</strong> - Remove and reinstall from Chrome Web Store</li>
+        <li><strong>Check eBay status</strong> - Verify eBay.com is working properly</li>
+        <li><strong>Try different listing</strong> - Test on another eBay item to see if it's item-specific</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Additional Resources</h2>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a> - How we handle your data</li>
+        <li><a href="terms.html">Terms of Service</a> - Usage terms and conditions</li>
+        <li><a href="help.html">Help Center</a> - Common questions and tutorials</li>
+        <li><a href="index.html">Home</a>
+          <a href="about.html">About Us</a> - Learn more about SoldinSight</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p><strong>SoldinSight</strong></p>
+      <p>We're here to help! 💙</p>
+      
+      <div class="quick-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="help.html">Help Center</a>
+        <a href="about.html">About</a>
+      </div>
+      
+      <p style="margin-top: 20px;">
+        <a href="mailto:soldinsight@gmail.com">soldinsight@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
