@@ -418,23 +418,16 @@
 
       <h3>4.1 <code>storage</code></h3>
       <ul>
-        <li><strong>Purpose:</strong> Save cached listing data and user preferences locally on your device</li>
+        <li><strong>Purpose:</strong> Save cached listing data, user preferences, and the rolling profit calculator usage limit locally on your device</li>
         <li><strong>Scope:</strong> Local device storage only. No cloud sync. No external servers.</li>
       </ul>
 
-      <h3>4.2 <code>activeTab</code></h3>
-      <ul>
-        <li><strong>Purpose:</strong> Read the eBay listing page you are currently viewing to display the SoldinSight panel and extract item details</li>
-        <li><strong>Scope:</strong> Only the active tab, only on eBay listing pages</li>
-        <li><strong>Limitation:</strong> Cannot access other tabs, other websites, or background tabs</li>
-      </ul>
-
-      <h3>4.2.1 Theme Preference</h3>
+      <h3>4.1.1 Theme Preference</h3>
       <p>Your dark/light mode preference is stored in <code>chrome.storage.local</code> under the key <code>soldinsight_theme</code>. This is a single string value (<code>"dark"</code> or <code>"light"</code>) stored entirely on your device. It is never transmitted anywhere.</p>
 
-      <h3>4.3 Host Permissions (eBay domains + Frankfurter)</h3>
+      <h3>4.2 Host Permissions (eBay domains + Frankfurter)</h3>
       <ul>
-        <li><strong>eBay domains</strong> (ebay.com, ebay.com.au, ebay.co.uk, etc.): Required to fetch publicly available sold listing data</li>
+        <li><strong>eBay domains</strong> (ebay.com, ebay.com.au, ebay.co.uk, etc.): Required to inject the sold history UI on listing and search pages, and to fetch publicly available sold listing data via the background service worker</li>
         <li><strong>api.frankfurter.app</strong>: Required to fetch currency exchange rates for the profit calculator</li>
         <li>No other domains are accessed</li>
       </ul>
@@ -573,7 +566,7 @@
         <a href="terms.html">Terms of Service</a>
         <a href="help.html">Help Center</a>
         <a href="index.html">Home</a>
-          <a href="about.html">About</a>
+        <a href="about.html">About</a>
       </div>
       
       <p style="margin-top: 10px;">
